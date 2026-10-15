@@ -270,3 +270,99 @@ textarea.field {
     transform: none;
   }
 }
+
+.ig-board {
+  position: relative;
+  isolation: isolate;
+  background:
+    radial-gradient(ellipse at 50% 0%, color-mix(in srgb, var(--color-accent) 16%, transparent), transparent 42%),
+    var(--color-bg);
+}
+
+.ig-smoke {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.ig-grid {
+  display: grid;
+  gap: 0.8rem;
+  perspective: 900px;
+}
+
+.ig-card {
+  --rx: 0deg;
+  --ry: 0deg;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  min-height: 4.75rem;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 0.95rem 1.05rem;
+  overflow: visible;
+  border: 1px solid color-mix(in srgb, var(--color-fg) 16%, transparent);
+  border-radius: var(--radius-card);
+  background: color-mix(in srgb, var(--color-surface) 82%, transparent);
+  color: var(--color-fg);
+  text-decoration: none;
+  transform: rotateX(var(--rx)) rotateY(var(--ry));
+  transform-style: preserve-3d;
+  transition:
+    border-color 0.35s ease,
+    background 0.35s ease,
+    transform 0.18s ease;
+}
+
+.ig-card:hover,
+.ig-card:focus-visible {
+  border-color: color-mix(in srgb, var(--color-accent) 80%, var(--color-fg));
+  background: color-mix(in srgb, var(--color-surface) 64%, transparent);
+  transform: rotateX(var(--rx)) rotateY(var(--ry)) translateY(-4px);
+}
+
+.ig-mark {
+  position: relative;
+  display: grid;
+  width: 2.6rem;
+  height: 2.6rem;
+  flex: none;
+  place-items: center;
+}
+
+.ig-coal {
+  position: absolute;
+  right: -1px;
+  bottom: -1px;
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--color-fg);
+  box-shadow:
+    0 0 0 3px var(--color-accent),
+    0 0 18px 4px color-mix(in srgb, var(--color-accent) 80%, transparent);
+}
+
+.ig-handle {
+  font-weight: 500;
+  font-size: 0.95rem;
+  letter-spacing: 0.01em;
+  overflow-wrap: anywhere;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ig-smoke {
+    display: none;
+  }
+
+  .ig-card,
+  .ig-card:hover,
+  .ig-card:focus-visible {
+    transform: none;
+    transition: none;
+  }
+}

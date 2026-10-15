@@ -2,6 +2,7 @@ import { useState, type FormEvent } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { BedDouble, Bus, Coffee, Plane, Sparkles, Users } from "lucide-react";
 import { GlobeHero } from "@/components/globe-hero";
+import { InstagramDirectory } from "@/components/instagram-directory";
 import { FlagTH, ORIGINS } from "@/components/flags";
 
 export const Route = createFileRoute("/")({ component: Home });
@@ -51,6 +52,7 @@ function Home() {
       <Islands />
       <Ticket />
       <Access />
+      <InstagramDirectory />
       <footer className="border-t border-fg/10 px-5 py-8 text-center">
         <p className="kicker text-muted">
           John Doe Supply Co. · Koh Samui & Phuket · 1–14 December 2026 · Limited to 150
