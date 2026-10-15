@@ -12,14 +12,14 @@ type City = {
 };
 
 const CITIES: City[] = [
-  { id: "lax", name: "Los Angeles", lat: 34.05, lng: -118.24, nx: -16, ny: -32, origin: true },
-  { id: "dub", name: "Dublin", lat: 53.35, lng: -6.26, nx: -86, ny: -30, origin: true },
-  { id: "man", name: "Manchester", lat: 53.48, lng: -2.24, nx: 86, ny: -32, origin: true },
-  { id: "lon", name: "London", lat: 51.51, lng: -0.13, nx: -90, ny: 22, origin: true },
-  { id: "ber", name: "Berlin", lat: 52.52, lng: 13.41, nx: 88, ny: 20, origin: true },
-  { id: "bcn", name: "Barcelona", lat: 41.39, lng: 2.17, nx: 4, ny: 36, origin: true },
-  { id: "samui", name: "Koh Samui", lat: 9.51, lng: 100.01, nx: 92, ny: -16, origin: false },
-  { id: "hkt", name: "Phuket", lat: 7.88, lng: 98.39, nx: -88, ny: 22, origin: false },
+  { id: "lax", name: "Los Angeles", lat: 34.05, lng: -118.24, nx: 0, ny: -14, origin: true },
+  { id: "dub", name: "Dublin", lat: 53.35, lng: -6.26, nx: -8, ny: -14, origin: true },
+  { id: "man", name: "Manchester", lat: 53.48, lng: -2.24, nx: 10, ny: -14, origin: true },
+  { id: "lon", name: "London", lat: 51.51, lng: -0.13, nx: -10, ny: 13, origin: true },
+  { id: "ber", name: "Berlin", lat: 52.52, lng: 13.41, nx: 12, ny: 12, origin: true },
+  { id: "bcn", name: "Barcelona", lat: 41.39, lng: 2.17, nx: 0, ny: 14, origin: true },
+  { id: "samui", name: "Koh Samui", lat: 9.51, lng: 100.01, nx: 8, ny: -14, origin: false },
+  { id: "hkt", name: "Phuket", lat: 7.88, lng: 98.39, nx: -8, ny: 13, origin: false },
 ];
 
 const DESTINATIONS = CITIES.filter((city) => !city.origin);
@@ -85,8 +85,6 @@ export function GlobeHero() {
 
     const separate = () => {
       if (!globe || host.clientWidth === 0) return;
-      const w = host.clientWidth;
-      const h = host.clientHeight;
       const placed: {
         pin: Pin;
         x: number;
@@ -110,19 +108,12 @@ export function GlobeHero() {
           ay: point.y,
           x: point.x + pin.city.nx,
           y: point.y + pin.city.ny,
-          hw: lw / 2 + 8,
-          hh: lh / 2 + 6,
+          hw: lw / 2 + 2,
+          hh: lh / 2 + 2,
         });
       }
 
-      const title = {
-        x: w / 2,
-        y: h * 0.47,
-        hw: Math.min(w * 0.32, 330),
-        hh: Math.min(h * 0.14, 110),
-      };
-
-      for (let iter = 0; iter < 28; iter += 1) {
+      for (let iter = 0; iter < 16; iter += 1) {
         for (let i = 0; i < placed.length; i += 1) {
           const a = placed[i];
           for (let j = i + 1; j < placed.length; j += 1) {
@@ -146,25 +137,14 @@ export function GlobeHero() {
             }
           }
 
-          const tdx = a.x - title.x;
-          const tdy = a.y - title.y;
-          const penX = title.hw + a.hw - Math.abs(tdx);
-          const penY = title.hh + a.hh - Math.abs(tdy);
-          if (penX > 0 && penY > 0) {
-            if (penX < penY) a.x += Math.sign(tdx || 1) * (penX + 4);
-            else a.y += Math.sign(tdy || -1) * (penY + 4);
-          }
-
           const ox = a.x - a.ax;
           const oy = a.y - a.ay;
           const dist = Math.hypot(ox, oy);
-          const max = 110;
+          const max = 22;
           if (dist > max) {
             a.x = a.ax + (ox / dist) * max;
             a.y = a.ay + (oy / dist) * max;
           }
-          a.x = Math.min(w - a.hw, Math.max(a.hw, a.x));
-          a.y = Math.min(h - 72, Math.max(a.hh + 6, a.y));
         }
       }
 
