@@ -48,6 +48,7 @@ function Home() {
     <main className="bg-bg text-fg">
       <Hero />
       <Package />
+      <House />
       <Features />
       <Islands />
       <Ticket />
@@ -138,6 +139,47 @@ function Package() {
         >
           Request access
         </a>
+      </div>
+    </section>
+  );
+}
+
+function House() {
+  return (
+    <section className="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-28">
+      <p className="kicker text-accent">The house</p>
+      <h2 className="display mt-3 max-w-3xl">A name with no face.</h2>
+      <div className="mt-8 grid items-start gap-10 lg:grid-cols-12">
+        <div className="space-y-5 text-base leading-relaxed text-fg lg:col-span-7">
+          <p>
+            John Doe Supply Co. came out of Humboldt’s living-soil rooms and stayed quiet on purpose. No face, no
+            campaign. The flower still moved — Los Angeles, New York, Washington — because the cut was the only
+            advertisement.
+          </p>
+          <p>
+            Kamikaze, a Zkittlez pheno grown in California, was the one that travelled. In 2022 it carried both
+            names: John Doe Supply Co. and Doja Exclusive. Doja Pak, Ryan Bartholomew’s house, put that soil-grown
+            flower in a much louder room and left Doe in the dark, where the work had always been. The line kept
+            going. Kookiez, Kamikaze crossed to Thin Mint Cookies, is a current staple. Head Crack Candy is the
+            other pack people already asked for by name.
+          </p>
+          <p className="text-muted">
+            The fortnight is that same house, with a door. Two islands. Two coffeeshops. One hundred and fifty
+            people.
+          </p>
+        </div>
+        <ul className="grid gap-3 lg:col-span-5">
+          {[
+            ["Kamikaze", "Zkittlez pheno. The 2022 collab with Doja Exclusive."],
+            ["Kookiez", "Kamikaze × Thin Mint Cookies. One of the current staples."],
+            ["Head Crack Candy", "The other cut that moved with the name."],
+          ].map(([name, note]) => (
+            <li key={name} className="card rounded-card px-5 py-4">
+              <p className="font-sans text-lg font-medium tracking-tight">{name}</p>
+              <p className="mt-1 text-sm leading-relaxed text-muted">{note}</p>
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );
