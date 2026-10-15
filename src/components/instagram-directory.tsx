@@ -8,6 +8,7 @@ const CONTACTS: Profile[] = [
   { handle: "johndoesupplyco.xo" },
   { handle: "dannymowlds" },
   { handle: "thecalicaverecords" },
+  { handle: "johndoesupply.ldn" },
 ];
 
 const SHOPS: Profile[] = [{ handle: "johndoekohsamui" }, { handle: "johndoephuket" }];
