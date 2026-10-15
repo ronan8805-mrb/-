@@ -150,22 +150,11 @@ function House() {
       <p className="kicker text-accent">The house</p>
       <h2 className="display mt-3 max-w-3xl">A name with no face.</h2>
       <div className="mt-8 grid items-start gap-10 lg:grid-cols-12">
-        <div className="space-y-5 text-base leading-relaxed text-fg lg:col-span-7">
-          <p>
-            John Doe Supply Co. came out of Humboldt’s living-soil rooms and stayed quiet on purpose. No face, no
-            campaign. The flower still moved — Los Angeles, New York, Washington — because the cut was the only
-            advertisement.
-          </p>
-          <p>
-            Kamikaze, a Zkittlez pheno grown in California, was the one that travelled. In 2022 it carried both
-            names: John Doe Supply Co. and Doja Exclusive. Doja Pak, Ryan Bartholomew’s house, put that soil-grown
-            flower in a much louder room and left Doe in the dark, where the work had always been. The line kept
-            going. Kookiez, Kamikaze crossed to Thin Mint Cookies, is a current staple. Head Crack Candy is the
-            other pack people already asked for by name.
-          </p>
-          <p className="text-muted">
-            The fortnight is that same house, with a door. Two islands. Two coffeeshops. One hundred and fifty
-            people.
+        <div className="lg:col-span-7">
+          <p className="text-base leading-relaxed text-fg">
+            John Doe Supply Co. is a Humboldt living-soil house with no face on the bag. Kamikaze, a Zkittlez
+            pheno, travelled first — and in 2022 it carried Doja Exclusive’s name beside it. Kookiez and Head
+            Crack Candy followed. This fortnight is that same house, with a door.
           </p>
         </div>
         <ul className="grid gap-3 lg:col-span-5">
