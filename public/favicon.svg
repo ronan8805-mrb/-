@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="John Doe Supply Co.">
+  <rect width="32" height="32" fill="#070908"/>
+  <g fill="#f6f3ec">
+    <path d="M4.2 6.2h9.4v2.7H11v8.4c0 1.55-.95 2.55-2.45 2.55-.85 0-1.5-.28-1.9-.75l1.85-1.25c.12.16.32.3.58.3.55 0 .9-.38.9-1.05V8.9H4.2V6.2z"/>
+    <path fill-rule="evenodd" d="M16.6 6.2h5.9c2.55 0 4.15 1.7 4.15 4.35v4.4c0 2.65-1.6 4.35-4.15 4.35h-5.9V6.2zm2.7 2.65v8.5h2.85c1.05 0 1.7-.75 1.7-1.95v-4.6c0-1.2-.65-1.95-1.7-1.95H19.3z"/>
+  </g>
+  <rect y="27.4" width="32" height="4.6" fill="#e10600"/>
+</svg>
