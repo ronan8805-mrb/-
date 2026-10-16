@@ -115,8 +115,8 @@ function Package() {
         <div className="mt-10 grid grid-cols-3 gap-3 sm:gap-8">
           {[
             ["€1,999", "Euro"],
-            ["£1,999", "Sterling"],
-            ["$1,999", "Dollar"],
+            ["£1,699", "Sterling"],
+            ["$2,250", "Dollar"],
           ].map(([amount, label]) => (
             <div key={label}>
               <p className="price">{amount}</p>
@@ -129,7 +129,7 @@ function Package() {
         </p>
         <p className="kicker mt-4 text-accent">Limited to 150 people worldwide</p>
         <p className="mt-6 max-w-2xl text-sm leading-relaxed text-muted">
-          €1,999, £1,999 and $1,999 are fixed package prices. The dollar figure is a courtesy rate, not a live
+          €1,999, £1,699 and $2,250 are fixed package prices. The dollar figure is a courtesy rate, not a live
           conversion. Prefer to arrange your own flights and hotels? You can still come — the Networking All
           Access VIP ticket is €199 when you organise your own accommodation and travel.
         </p>
