@@ -7,8 +7,8 @@
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      background: #000;
-      color: #fff;
+      background: #0a0a0a;
+      color: #f5f5f5;
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
       min-height: 100vh;
       display: flex;
@@ -18,39 +18,87 @@
       padding: 20px;
       text-align: center;
     }
-    h1 { font-size: clamp(1.6rem, 5vw, 2.6rem); color: #ff3333; margin-bottom: 10px; font-weight: 800; }
+    .logo {
+      max-width: 180px;
+      margin-bottom: 20px;
+    }
+    h1 {
+      font-size: clamp(1.5rem, 4.5vw, 2.4rem);
+      color: #ff3333;
+      margin-bottom: 8px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
     .status {
-      font-size: clamp(1.5rem, 4.5vw, 2.2rem);
+      font-size: clamp(1.4rem, 4vw, 2rem);
       color: #00cc66;
       font-weight: bold;
-      margin: 20px 0;
+      margin: 15px 0 25px;
       border: 3px solid #00cc66;
       display: inline-block;
-      padding: 14px 40px;
-      border-radius: 10px;
-      background: rgba(0, 204, 102, 0.1);
+      padding: 12px 36px;
+      border-radius: 12px;
+      background: rgba(0, 204, 102, 0.12);
     }
-    p { font-size: 1.15rem; line-height: 1.7; max-width: 620px; margin: 12px auto; color: #e0e0e0; }
-    .details { background: #111; border-radius: 16px; padding: 30px 25px; margin: 30px 0; max-width: 520px; width: 100%; border: 1px solid #222; }
-    .details strong { color: #fff; }
-    .back { margin-top: 25px; display: inline-block; color: #fff; text-decoration: none; border: 2px solid #fff; padding: 14px 32px; border-radius: 8px; font-weight: bold; }
+    p { font-size: 1.05rem; line-height: 1.6; max-width: 640px; margin: 10px auto; color: #ddd; }
+    .card {
+      background: #111;
+      border-radius: 16px;
+      padding: 28px 22px;
+      margin: 25px 0;
+      max-width: 560px;
+      width: 100%;
+      border: 1px solid #222;
+      text-align: left;
+    }
+    .card h2 { color: #fff; font-size: 1.2rem; margin-bottom: 16px; text-align: center; }
+    .row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #222; }
+    .row:last-child { border-bottom: none; }
+    .label { color: #aaa; font-size: 0.95rem; }
+    .value { color: #fff; font-weight: 600; }
+    .badge {
+      display: inline-block;
+      background: #00cc66;
+      color: #000;
+      font-size: 0.75rem;
+      font-weight: bold;
+      padding: 3px 8px;
+      border-radius: 4px;
+      margin-left: 6px;
+    }
+    .back {
+      margin-top: 20px;
+      display: inline-block;
+      color: #fff;
+      text-decoration: none;
+      border: 2px solid #fff;
+      padding: 12px 28px;
+      border-radius: 8px;
+      font-weight: bold;
+    }
     .back:hover { background: #fff; color: #000; }
+    .small { font-size: 0.85rem; color: #888; margin-top: 15px; }
   </style>
 </head>
 <body>
+  <img src="/logo-mark.png" alt="John Doe Supply Co." class="logo" onerror="this.style.display='none'">
   <h1>QUALITY CONTROL VERIFICATION</h1>
   <div class="status">APPROVED</div>
-  <p>This cannabis product has successfully passed quality control inspection and is approved by</p>
-  <p><strong>John Doe Supply Co.</strong></p>
-  <p>California, United States of America</p>
-  <div class="details">
-    <p><strong>Verification Status:</strong> Authentic & Approved</p>
-    <p><strong>Quality Control:</strong> Completed</p>
-    <p><strong>Location of QC:</strong> California, USA</p>
-    <p><strong>Brand:</strong> John Doe Supply Co.</p>
-    <p>Scan confirmed. This product is genuine.</p>
+  <p>This cannabis product has successfully passed full quality control inspection and is certified by</p>
+  <p><strong>John Doe Supply Co. — California, USA</strong></p>
+
+  <div class="card">
+    <h2>Certificate of Analysis</h2>
+    <div class="row"><span class="label">Batch Number</span><span class="value">JD-CA-2026-0847</span></div>
+    <div class="row"><span class="label">QC Status</span><span class="value">Passed <span class="badge">APPROVED</span></span></div>
+    <div class="row"><span class="label">Test Date</span><span class="value">14 November 2026</span></div>
+    <div class="row"><span class="label">Facility</span><span class="value">California, USA</span></div>
+    <div class="row"><span class="label">Potency</span><span class="value">Verified</span></div>
+    <div class="row"><span class="label">Contaminants</span><span class="value">None Detected</span></div>
+    <div class="row"><span class="label">Authenticity</span><span class="value">Genuine John Doe Supply Co.</span></div>
   </div>
-  <p>For questions about this verification, contact John Doe Supply Co.</p>
+
+  <p class="small">This verification confirms the product meets John Doe Supply Co. quality standards.<br>QR code scan authenticated.</p>
   <a href="/" class="back">Back to Main Site</a>
 </body>
 </html>
